@@ -20,6 +20,24 @@ public class ServidorTrivial {
                 try (DataInputStream entradaDatos = new DataInputStream(clienteConectado.getInputStream()); 
                         DataOutputStream salidaDatos = new DataOutputStream(clienteConectado.getOutputStream())) {
 
+                    try(BufferedReader bfr = new BufferedReader(new FileReader("./src/Ejercicio2/preguntas.txt"))){
+         
+                        ArrayList<String> elementosFicheros = new ArrayList<>();
+                        
+                        String linea;
+         
+                        while ((linea  = bfr.readLine()) != null) {                            
+                            elementosFicheros.add(linea);
+                        }
+                        
+                        for (String elementos : elementosFicheros) {
+                            
+                        }
+                        
+                    }
+                    
+
+                    
                     ArrayList<Pregunta> preguntas = new ArrayList<>();
                     preguntas.add(new Pregunta("¿Cuál es la capital de Francia?", "parís"));
                     preguntas.add(new Pregunta("¿Cuánto es 10 +5?", "15"));

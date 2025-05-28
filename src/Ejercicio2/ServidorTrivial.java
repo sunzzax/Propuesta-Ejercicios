@@ -22,9 +22,10 @@ public class ServidorTrivial {
                 // String partes[] = linea.split("\\|"); forma mas rapida, debo usar \\ porque java interpreta | como 'o' (condición)
 //                if (partes.length == 2) {
 //                    preguntas.add(new Pregunta(partes[0].trim(), partes[1].trim()));
+//            }
                 int separado = linea.indexOf('|'); // busca la posicion en la que se encuentra '|'... si lo encuentra devuelve un numero entero
                 // con la posición, por eso aqui abajo he puesto -1 porque si es distinto se añade.
-                if(separado != -1){
+                if (separado != -1) {
                     preguntas.add(new Pregunta(linea.substring(0, separado).trim(), linea.substring(separado + 1).trim()));
                 }
 
@@ -50,7 +51,6 @@ public class ServidorTrivial {
 //                    preguntas.add(new Pregunta("¿Cuánto es 10 +5?", "15"));
 //                    preguntas.add(new Pregunta("¿A que comunidad autónoma pertence Almería?", "andalucía"));
 //                    preguntas.add(new Pregunta("¿Cómo se llama la aplicación para subir las tareas?", "moodle"));
-
                     boolean esVerdad = true;
                     int contador = 0;
                     String respuesta = "";

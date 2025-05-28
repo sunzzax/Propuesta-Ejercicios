@@ -1,0 +1,8 @@
+reconocer
+perro
+oso
+correr
+Ana
+radar
+12321
+Hola Mundo

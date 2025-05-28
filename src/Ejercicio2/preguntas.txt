@@ -1,0 +1,4 @@
+¿Capital de Francia?|parís
+¿5 + 7?|12
+¿Color del cielo en un día despejado?|azul
+¿Lenguaje que empieza por 'J' y se usa en Android?|java

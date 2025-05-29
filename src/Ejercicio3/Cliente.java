@@ -4,17 +4,42 @@
  */
 package Ejercicio3;
 
-/**
- *
- * @author kira
- */
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Cliente {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        int puerto = 6001;
+        String host = "localhost";
+        String letra = "";
+        
+        try (Socket cliente = new Socket(host, puerto)) {
+            Scanner scan = new Scanner(System.in);
+
+            try (DataInputStream entradaDatos = new DataInputStream(cliente.getInputStream()); 
+                    DataOutputStream salidaDatos = new DataOutputStream(cliente.getOutputStream())) {
+
+                while (!letra.contains("salir")) {
+                    System.out.println("Introduce una letra para hacer uso del Cifrado César:");
+                    letra = scan.nextLine();
+
+                    salidaDatos.writeUTF(letra);
+
+                    System.out.println("Mensaje recibido del Servidor: " + entradaDatos.readUTF());
+                }
+
+                System.out.println(entradaDatos.readUTF());
+                
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
 }

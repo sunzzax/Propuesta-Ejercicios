@@ -86,7 +86,7 @@ public class Servidor {
             }
 
         } catch (IOException ex) {
-            System.err.println("Error al intentar conectarse por el puerto " + puerto);
+            System.err.println("Error al intentar conectarse por el puerto " + puerto + ". " + ex.getMessage());
         }
 
     }

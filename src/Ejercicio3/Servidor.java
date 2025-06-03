@@ -73,8 +73,8 @@ public class Servidor {
                                     palabra += letra;
 
                                     // Pero si por ejemplo no es una letra lo que hago es añadirle a palabra un espacio
-                                    // en blanco, si no lo hacia lo que pasaba es que al poner otra palabra salia
-                                    // mezclado con lo anterior...
+                                    // en blanco, porque sino lo que hacia es que al poner otra palabra salia
+                                    // mezclado con lo anterior o simplemente salia otra cosa completamente distinta...
                                 } else {
                                     palabra += "";
                                 }
@@ -84,12 +84,12 @@ public class Servidor {
                             
                             // FUERA DEL BUCLE
                             
-                            // Si escribo 'salir' el porgrama termina, como arriba hemos dicho que si lo que 
-                            // escribo es igual a 'salir' no se ejecuta y de esa manera acaba
+                            // Si escribo 'salir' el porgrama termina, como arriba en el 'while' hemos dicho que si lo que 
+                            // escribo es igual a 'salir' entonces no se ejecutará y de esa manera acaba
                             if (mensaje.equals("salir")) {
                                 salidaDatos.writeUTF("Fin del Programa.");
                                 
-                                // Sino impirme la palabra
+                                // Sino imprime la palabra
                             } else {
                                 salidaDatos.writeUTF(palabra);
                             }

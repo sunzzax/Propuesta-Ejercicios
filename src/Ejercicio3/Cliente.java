@@ -25,19 +25,23 @@ public class Cliente {
                     DataOutputStream salidaDatos = new DataOutputStream(cliente.getOutputStream())) {
 
                 
-                
+                // Hago un bucle para que mientras la palabra que yo escriba no sea salir ejecute lo de dentro
                 while (!palabra.equals("salir")) {
                     System.out.println("Introduce una palabra para hacer uso del Cifrado César:");
+
+                    // Almaceno la palabra en una variable
                     palabra = scan.nextLine();
                     
+                    // Le paso la palabra al servidor
                     salidaDatos.writeUTF(palabra);
+                    // Muestro el mensaje recibido del servidor
                     System.out.println("Mensaje recibido del Servidor: " + entradaDatos.readUTF());
                 }
                 
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Error. No se ha poddio realizar la conexión con el servidor. " + ex.getMessage());
         }
     }
 

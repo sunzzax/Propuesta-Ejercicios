@@ -16,7 +16,7 @@ public class Cliente {
 
         int puerto = 6001;
         String host = "localhost";
-        String letra = "";
+        String palabra = "";
         
         try (Socket cliente = new Socket(host, puerto)) {
             Scanner scan = new Scanner(System.in);
@@ -24,16 +24,15 @@ public class Cliente {
             try (DataInputStream entradaDatos = new DataInputStream(cliente.getInputStream()); 
                     DataOutputStream salidaDatos = new DataOutputStream(cliente.getOutputStream())) {
 
-                while (!letra.contains("salir")) {
-                    System.out.println("Introduce una letra para hacer uso del Cifrado César:");
-                    letra = scan.nextLine();
-
-                    salidaDatos.writeUTF(letra);
-
+                
+                
+                while (!palabra.equals("salir")) {
+                    System.out.println("Introduce una palabra para hacer uso del Cifrado César:");
+                    palabra = scan.nextLine();
+                    
+                    salidaDatos.writeUTF(palabra);
                     System.out.println("Mensaje recibido del Servidor: " + entradaDatos.readUTF());
                 }
-
-                System.out.println(entradaDatos.readUTF());
                 
             }
 

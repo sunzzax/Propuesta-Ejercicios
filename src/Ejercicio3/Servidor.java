@@ -18,7 +18,8 @@ public class Servidor {
 
             try (Socket clienteConectado = servidor.accept()) {
 
-                try (DataInputStream entradaDatos = new DataInputStream(clienteConectado.getInputStream()); DataOutputStream salidaDatos = new DataOutputStream(clienteConectado.getOutputStream())) {
+                try (DataInputStream entradaDatos = new DataInputStream(clienteConectado.getInputStream()); 
+                        DataOutputStream salidaDatos = new DataOutputStream(clienteConectado.getOutputStream())) {
 
                     System.out.println("Cliente conectado.");
 
@@ -32,8 +33,6 @@ public class Servidor {
                         } else {
 
                             String palabra = "";
-                            String enviar = "";
-                            boolean esValido = true;
 
                             for (int i = 0; i < mensaje.length(); i++) {
 
